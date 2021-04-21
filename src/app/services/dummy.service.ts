@@ -12,14 +12,14 @@ export class DummyService {
   constructor() {
     this.shows = [
       new Show({
-        name: 'Doctor Who',
-        language: 'English',
-        genres: ['Sci-Fi', 'Action', 'Adventure'],
-        id: 110,
-        summary: 'A show about a time travelling alien called The Doctor.',
-        status: 'ongoing',
-        image: 'https://static.tvmaze.com/uploads/images/medium_portrait/231/579166.jpg'
-      }),
+      name: 'Doctor Who',
+      language: 'English',
+      genres: ['Sci-Fi', 'Action', 'Adventure'],
+      id: 110,
+      summary: 'A show about a time travelling alien called The Doctor.',
+      status: 'ongoing',
+      image: 'https://static.tvmaze.com/uploads/images/medium_portrait/231/579166.jpg'
+    }),
       new Show({
         name: 'The Magicians',
         language: 'English',
@@ -66,7 +66,7 @@ export class DummyService {
       new Episode({
         id: 202,
         name: 'pilot',
-        season: 2,
+        season: 12,
         episode: 2,
         airdate: '2021-02-02',
         summary: 'The pilot episode.'
@@ -74,7 +74,7 @@ export class DummyService {
       new Episode({
         id: 203,
         name: 'pilot',
-        season: 2,
+        season: 12,
         episode: 3,
         airdate: '2021-02-02',
         summary: 'The pilot episode.'
