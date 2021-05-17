@@ -14,6 +14,9 @@ import { ShowInfoComponent } from './show-info/show-info.component';
 import { ShowDetailsComponent } from './show-details/show-details.component';
 import { WatchlistComponent } from './watchlist/watchlist.component';
 import { ErrorComponent } from './error/error.component';
+import { EncryptPipe } from './controls/encrypt.pipe';
+import { ShortenPipe } from './controls/shorten.pipe';
+import { HtmlstripperPipe } from './controls/htmlstripper.pipe';
 
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatInputModule } from '@angular/material/input';
@@ -22,9 +25,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatCardModule } from '@angular/material/card';
 import { MatTableModule } from '@angular/material/table';
 import { MatGridListModule } from '@angular/material/grid-list';
-import { EncryptPipe } from './controls/encrypt.pipe';
-import { ShortenPipe } from './controls/shorten.pipe';
-import { HtmlstripperPipe } from './controls/htmlstripper.pipe';
+
 
 @NgModule({
   declarations: [
