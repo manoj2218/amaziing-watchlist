@@ -2,8 +2,8 @@ import {Component, Input, OnInit} from '@angular/core';
 import { Episode } from '../models/episode.model';
 import { Show } from '../models/show.model';
 import {ActivatedRoute} from '@angular/router';
+import {DummyService} from '../services/dummy.service';
 import {MatTableDataSource} from '@angular/material/table';
-import {TvmazeService} from '../services/tvmaze.service';
 
 @Component({
   selector: 'app-show-details',
@@ -11,22 +11,17 @@ import {TvmazeService} from '../services/tvmaze.service';
   styleUrls: ['./show-details.component.css']
 })
 export class ShowDetailsComponent implements OnInit {
-  sid: string;
   show: Show;
   episodes: MatTableDataSource<Episode>;
   tableHeaders: Array<string>;
-  constructor(private route: ActivatedRoute, private tvService: TvmazeService) {
+  constructor(private route: ActivatedRoute, private dummyService: DummyService) {
     this.tableHeaders = ['number', 'name', 'aired', 'summary'];
   }
 
   ngOnInit(): void {
     this.route.params.subscribe((p) => {
-      this.sid = p.id;
-      this.tvService.getShowWithEps(this.sid).subscribe(results => {
-        this.show = results.show;
-        this.episodes = new MatTableDataSource(results.episodes);
-        }
-      );
+      this.dummyService.getShow(p.id).subscribe((show) => { this.show = show; });
+      this.dummyService.getEpisodes().subscribe((eps) => { this.episodes = new MatTableDataSource<Episode>(eps); });
     });
   }
 
